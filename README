@@ -1,89 +1,56 @@
-NAME
-    "CGI::Echo" - Echo form data to test form design.
+README file for CGI::Echo.
 
-Synopsis
-    This is complete, tested program:
+Warning: WinZip 8.1 and 9.0 both contain an 'accidental' bug which stops
+them recognizing POSIX-style directory structures in valid tar files.
+You are better off using a reliable tool such as InfoZip:
+ftp://ftp.info-zip.org/pub/infozip/
 
-            #!/usr/bin/perl -wT
+1 Installing from a Unix-like distro
+------------------------------------
+shell>gunzip CGI-Echo-1.04.tgz
+shell>tar mxvf CGI-Echo-1.04.tar
 
-            use lib '.';
-            use strict;
+On Unix-like systems, assuming you have installed Module::Build V 0.25+:
 
-            use CGI;
-            use CGI::Echo;
+shell>perl Build.PL
+shell>./Build
+shell>./Build test
+shell>./Build install
 
-            # -----------------------------------------------
+On MS Windows-like systems, assuming you have installed Module::Build V 0.25+:
 
-            my($q) = CGI -> new();
+shell>perl Build.PL
+shell>perl Build
+shell>perl Build test
+shell>perl Build install
 
-            CGI::Echo -> new(q => $q) -> print();
+Alternately, without Module::Build, you do this:
 
-Description
-    This module accepts form data, cleans it, and echos it.
+Note: 'make' on MS Windows-like systems may be called 'nmake' or 'dmake'.
 
-    It is designed for a HTML/CGI student enviroment. It lets, indeed
-    encourages, students to design forms and gives their long-suffering
-    instructors a simple way to provide a CGI script which accepts the form
-    data, and just echos it.
+shell>perl Makefile.PL
+shell>make
+shell>make test
+shell>su              (for Unix-like systems)
+shell>make install
+shell>exit            (for Unix-like systems)
 
-Distributions
-    This module is available both as a Unix-style distro (*.tgz) and an
-    ActiveState-style distro (*.ppd). The latter is shipped in a *.zip file.
+On all systems:
 
-    See http://savage.net.au/Perl-modules/html/installing-a-module.html for
-    help on unpacking and installing each type of distro.
+Run Echo.pm through you favourite pod2html translator.
 
-Usage
-    See the synopsis.
+If you are using my fancy-pom2.pl, with its 'default.css' file installed in
+/apache2/htdocs/css/, you'd do:
 
-Options
-    Here, in alphabetical order, are the options accepted by the
-    constructor, together with their default values.
+shell>perl fancy-pom2.pl html -css Echo.pm > /apache2/htdocs/Echo.html
 
-    css => ''
-        This is the name of a CSS file which makes the sample form and the
-        echoed data look pretty.
+or perhaps something like:
 
-        See examples/default.css for a sample CSS file.
+shell>perl fancy-pom2.pl html -css Echo.pm > /perl/html/site/lib/CGI/Echo.html
 
-    q => ''
-        This is the CGI object used by "CGI::Echo" to do the work.
-
-    title => 'Echo Test'
-        This is the text used in the page title and as a heading when the
-        form data is echoed.
-
-Methods
-    new(%arg): The constructor
-        See the previous section for details.
-
-    print(%arg): Display the form data
-        Call this to output a table containing the form data.
-
-        print(%arg) takes the same parameters as new().
-
-    set(%arg): Set class member options
-        Call this to set options after calling new().
-
-        set(%arg) takes the same parameters as new().
-
-A Sample Form
-    The synopsis in Echo.pm contains the only script you'll need. You'll
-    find the code in examples/echo.cgi.
-
-    A sample form, examples/test-echo.html, is shipped to bootstrap the
-    design process.
-
-Author
-    "CGI::Echo" was written by Ron Savage *<ron@savage.net.au>* in 2002.
-
-    Home page: http://savage.net.au/index.html
-
-Copyright
-    Australian copyright (c) 2002, Ron Savage. All rights reserved.
-
-            All Programs of mine are 'OSI Certified Open Source Software';
-            you can redistribute them and/or modify them under the terms of
-            The Artistic License, a copy of which is available at:
-            http://www.opensource.org/licenses/index.html
-
+2 Installing from an ActiveState distro
+---------------------------------------
+shell>unzip CGI-Echo-1.04.zip
+shell>ppm install --location=. CGI-Echo
+shell>del CGI-Echo-1.04.ppd
+shell>del PPM-CGI-Echo-1.04.tar.gz

@@ -1,5 +1,9 @@
 Revision history for Perl extension CGI::Echo.
 
+1.04  Mon Jul 19 10:47:00 2004
+	- Change Makefile.PL to coexist with Module::Build
+	- Rewrite t/test.t to use Test::More
+
 1.03  Sun Mar 23 11:29:00 2003
 	- No source code changes in this version
 	- Patch to stop shipping blib/ directory in Unix distros, because the

@@ -1,11 +1,12 @@
-Makefile.PL
-test.pl
-Echo.pm
+Build.PL
 Changes.txt
-README
-Echo.html
-MANIFEST
-t/test.t
 examples/default.css
 examples/echo.cgi
 examples/test-echo.html
+lib/CGI/Echo.pm
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+META.yml
+README
+t/test.t

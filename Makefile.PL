@@ -10,16 +10,23 @@ WriteMakefile
 		'AUTHOR' => 'Ron Savage (ron@savage.net.au)',
 		'ABSTRACT' => 'Echo form data to test form design',
     ) : (),
-	clean				=>
+	clean			=>
 	{
-		FILES			=> 'blib/* Makefile MANIFEST CGI-Echo-*'
+		FILES		=> 'blib/* Makefile MANIFEST CGI-Echo-*'
 	},
-	dist				=>
+	dist			=>
 	{
-		COMPRESS		=> 'gzip',
-		SUFFIX			=> 'gz'
+		COMPRESS	=> 'gzip',
+		SUFFIX		=> 'gz'
 	},
-	DISTNAME			=> 'CGI-Echo',
-	NAME				=> 'CGI::Echo',
-	VERSION_FROM		=> 'Echo.pm',
+	DISTNAME		=> 'CGI-Echo',
+	NAME			=> 'CGI::Echo',
+	PL_FILES		=> {},
+	PREREQ_PM		=>
+	{
+		Carp		=> 0,
+		Test::More	=> 0,
+		Test::Pod	=> 0,
+	},
+	VERSION_FROM	=> 'lib/CGI/Echo.pm',
 );
