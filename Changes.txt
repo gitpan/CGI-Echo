@@ -1,5 +1,8 @@
 Revision history for Perl extension CGI::Echo.
 
+1.02  Sat Oct 26 14:29:00
+	- Minor documentation changes. No need to upgrade
+
 1.01  Mon Oct  7 08:11:17
 	- Fix bug in test.pl. It was a copy of the test.pl from Module::MakeDist,
 		and called that module instead of calling CGI::Echo
