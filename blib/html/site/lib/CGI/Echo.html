@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<TITLE>C<CGI::Echo> - Echo form data to test form design.</TITLE>
+<LINK REV="made" HREF="mailto:">
+</HEAD>
+
+<BODY>
+
+<A NAME="__index__"></A>
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#name">NAME</A></LI>
+	<LI><A HREF="#synopsis">Synopsis</A></LI>
+	<LI><A HREF="#description">Description</A></LI>
+	<LI><A HREF="#distributions">Distributions</A></LI>
+	<LI><A HREF="#usage">Usage</A></LI>
+	<LI><A HREF="#options">Options</A></LI>
+	<LI><A HREF="#methods">Methods</A></LI>
+	<LI><A HREF="#a sample form">A Sample Form</A></LI>
+	<LI><A HREF="#author">Author</A></LI>
+	<LI><A HREF="#copyright">Copyright</A></LI>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="name">NAME</A></H1>
+<P><CODE>CGI::Echo</CODE> - Echo form data to test form design.</P>
+<P>
+<HR>
+<H1><A NAME="synopsis">Synopsis</A></H1>
+<P>This is complete, tested program:</P>
+<PRE>
+        #!/usr/bin/perl -wT</PRE>
+<PRE>
+        use lib '.';
+        use strict;</PRE>
+<PRE>
+        use CGI;
+        use CGI::Echo;</PRE>
+<PRE>
+        # -----------------------------------------------</PRE>
+<PRE>
+        my($q) = CGI -&gt; new();</PRE>
+<PRE>
+        CGI::Echo -&gt; new(q =&gt; $q) -&gt; print();</PRE>
+<P>
+<HR>
+<H1><A NAME="description">Description</A></H1>
+<P>This module accepts form data, cleans it, and echos it.</P>
+<P>It is designed for a HTML/CGI student enviroment. It lets, indeed encourages,
+students to design forms and gives their long-suffering instructors a simple
+way to provide a CGI script which accepts the form data, and just echos it.</P>
+<P>
+<HR>
+<H1><A NAME="distributions">Distributions</A></H1>
+<P>This module is available both as a Unix-style distro (*.tgz) and an
+ActiveState-style distro (*.ppd). The latter is shipped in a *.zip file.</P>
+<P>See <A HREF="http://savage.net.au/Perl-modules/html/installing-a-module.html">http://savage.net.au/Perl-modules/html/installing-a-module.html</A> for
+help on unpacking and installing each type of distro.</P>
+<P>
+<HR>
+<H1><A NAME="usage">Usage</A></H1>
+<P>See the synopsis.</P>
+<P>
+<HR>
+<H1><A NAME="options">Options</A></H1>
+<P>Here, in alphabetical order, are the options accepted by the constructor,
+together with their default values.</P>
+<DL>
+<DT><STRONG><A NAME="item_css_%3D%3E_%27%27">css =&gt; ''</A></STRONG><BR>
+<DD>
+This is the name of a CSS file which makes the sample form and the echoed
+data look pretty.
+<P>See examples/default.css for a sample CSS file.</P>
+<P></P>
+<DT><STRONG><A NAME="item_q_%3D%3E_%27%27">q =&gt; ''</A></STRONG><BR>
+<DD>
+This is the CGI object used by <CODE>CGI::Echo</CODE> to do the work.
+<P></P>
+<DT><STRONG><A NAME="item_title_%3D%3E_%27Echo_Test%27">title =&gt; 'Echo Test'</A></STRONG><BR>
+<DD>
+This is the text used in the page title and as a heading when the form
+data is echoed.
+<P></P></DL>
+<P>
+<HR>
+<H1><A NAME="methods">Methods</A></H1>
+<DL>
+<DT><STRONG><A NAME="item_new">new(%arg): The constructor</A></STRONG><BR>
+<DD>
+See the previous section for details.
+<P></P>
+<DT><STRONG><A NAME="item_print">print(%arg): Display the form data</A></STRONG><BR>
+<DD>
+Call this to output a table containing the form data.
+<P><A HREF="#item_print"><CODE>print(%arg)</CODE></A> takes the same parameters as new().</P>
+<P></P>
+<DT><STRONG><A NAME="item_set">set(%arg): Set class member options</A></STRONG><BR>
+<DD>
+Call this to set options after calling new().
+<P><A HREF="#item_set"><CODE>set(%arg)</CODE></A> takes the same parameters as new().</P>
+<P></P></DL>
+<P>
+<HR>
+<H1><A NAME="a sample form">A Sample Form</A></H1>
+<P>The synopsis in Echo.pm contains the only script you'll need. You'll find
+the code in examples/echo.cgi.</P>
+<P>A sample form, examples/test-echo.html, is shipped to bootstrap the design process.</P>
+<P>
+<HR>
+<H1><A NAME="author">Author</A></H1>
+<P><CODE>CGI::Echo</CODE> was written by Ron Savage <EM>&lt;<A HREF="mailto:ron@savage.net.au">ron@savage.net.au</A>&gt;</EM> in 2002.</P>
+<P>Home page: <A HREF="http://savage.net.au/index.html">http://savage.net.au/index.html</A></P>
+<P>
+<HR>
+<H1><A NAME="copyright">Copyright</A></H1>
+<P>Austrlian copyright (c) 2002, Ron Savage. All rights reserved.</P>
+<PRE>
+        All Programs of mine are 'OSI Certified Open Source Software';
+        you can redistribute them and/or modify them under the terms of
+        The Artistic License, a copy of which is available at:
+        <A HREF="http://www.opensource.org/licenses/index.html">http://www.opensource.org/licenses/index.html</A></PRE>
+
+</BODY>
+
+</HTML>
